@@ -1,6 +1,7 @@
 import { ComponentMapping } from '@uniformdev/csk-components/utils/createComponentResolver';
 import Container from './Container';
 import CustomComponent from './CustomComponent';
+import VideoPlayer from './VideoPlayer';
 
 // Here, you can add your own component or customize an existing CSK component with your logic or styles.
 export const customComponentsMapping: ComponentMapping = {
@@ -8,4 +9,5 @@ export const customComponentsMapping: ComponentMapping = {
   customComponent: { component: CustomComponent },
   // This is an overridden CSK Container component.
   container: { component: Container },
+  videoPlayer: { component: VideoPlayer },
 };

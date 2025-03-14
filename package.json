@@ -33,15 +33,24 @@
     "uniform:publish": "uniform context manifest publish"
   },
   "dependencies": {
+    "@uniformdev/canvas-algolia": "^19.58.0",
     "@uniformdev/canvas-next-rsc": "^20.6.1",
     "@uniformdev/csk-components": "^6.0.16",
     "@uniformdev/design-extensions-tools": "^6.0.16",
+    "algoliasearch": "^5.21.0",
+    "framer-motion": "^12.5.0",
+    "instantsearch.css": "^8.5.1",
     "next": "^15.1.7",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-instantsearch": "^7.15.4",
+    "react-instantsearch-nextjs": "^0.4.5"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^20.0.0",
     "@types/react": "^19.0.0",

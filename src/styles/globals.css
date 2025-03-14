@@ -1,3 +1,293 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  /* prettier-ignore */
+  .prose-content-dark {
+    @apply
+      /* layout */
+      max-w-none
+
+      /* body font */
+      font-body
+
+      /* base colors */
+      text-brand-charcoal-800
+
+      /* heading styles */
+      prose-h1:font-display
+      prose-h1:text-prose-h1
+      prose-h2:font-display
+      prose-h2:text-prose-h2
+      prose-h3:font-display
+      prose-h3:text-prose-h3
+
+      /* paragraph */
+      prose-p:font-body
+      prose-p:text-body-small
+
+      /* links */
+      prose-a:break-words
+      prose-a:font-body
+      prose-a:text-body
+      /* prose-a:<color> */
+      /* visited:prose-a:<color> */
+      /* hover:prose-a:<color> */
+
+      /* list styles */
+      prose-ol:ml-0
+      prose-ol:pl-5
+      prose-ol:font-body
+      prose-ol:text-body
+      prose-ul:ml-0
+      prose-ul:list-disc
+      prose-ul:pl-5
+      prose-ul:font-body
+      prose-ul:text-body
+      marker:text-brand-charcoal-800
+
+      /* table styles */
+      prose-table:border-0
+      prose-table:text-body
+
+      /* hr styles */
+      prose-hr:my-3
+      prose-hr:text-brand-charcoal-800
+
+      /* large breakpoint overrides */
+      prose-p:lg:text-body
+      prose-a:lg:text-link-large;
+  }
+
+  /* prettier-ignore */
+  .prose-content-light {
+    @apply
+      prose-content-dark
+    text-white
+    marker:text-white;
+  }
+
+  .prose-content-light h1,
+  .prose-content-light h2,
+  .prose-content-light h3,
+  .prose-content-light h4,
+  .prose-content-light h5,
+  .prose-content-light h6 .prose-content-light p,
+  .prose-content-light a,
+  .prose-content-light li,
+  .prose-content-light span,
+  .prose-content-light strong,
+  .prose-content-light em {
+    color: white;
+  }
+}
+
+/**
+* Cookiebot override styles
+*/
+#CybotCookiebotDialog,
+#CookiebotWidget {
+  @apply !font-sans;
+}
+
+#CybotCookiebotDialog button,
+#CookiebotWidget
+  #CookiebotWidget-widgetContent
+  button:not(.CookiebotWidget-close) {
+  @apply !rounded-3xl !border-2 !border-brand-charcoal-500 !px-10 !py-3 !font-sans !text-base !font-bold !text-black hover:!border-brand-purple-500;
+}
+
+#CybotCookiebotDialog
+  button#CybotCookiebotDialogDetailBodyContentCookieContainerNecessary,
+#CybotCookiebotDialog
+  button#CybotCookiebotDialogDetailBodyContentCookieContainerPreference,
+#CybotCookiebotDialog
+  button#CybotCookiebotDialogDetailBodyContentCookieContainerStatistics,
+#CybotCookiebotDialog
+  button#CybotCookiebotDialogDetailBodyContentCookieContainerAdvertising,
+#CybotCookiebotDialog
+  button#CybotCookiebotDialogDetailBodyContentCookieContainerUnclassified,
+#CookiebotWidget
+  #CookiebotWidget-widgetContent
+  button.CookiebotWidget-show-consent-details {
+  @apply !rounded-none !border-0 !px-0 !py-0 !font-sans !text-base !font-bold !text-black hover:!border-transparent;
+}
+
+#CybotCookiebotDialog #CybotCookiebotDialogBodyButtonAccept,
+#CybotCookiebotDialog #CybotCookiebotDialogBodyLevelButtonAccept,
+#CybotCookiebotDialog #CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll,
+#CookiebotWidget #CookiebotWidget-widgetContent #CookiebotWidget-btn-change {
+  @apply !rounded-3xl !border-brand-charcoal-500 !bg-white !px-10 !py-3 !font-sans !text-base !font-bold !text-black hover:!bg-brand-purple-500;
+}
+
+#CybotCookiebotDialog svg,
+#CookiebotWidget svg {
+  @apply !fill-brand-charcoal-500;
+}
+
+#CybotCookiebotDialog a,
+#CookiebotWidget a {
+  @apply !font-sans !text-base !text-black visited:!text-brand-charcoal-500 hover:!text-brand-purple-500;
+}
+
+#CybotCookiebotDialogNav
+  .CybotCookiebotDialogNavItemLink.CybotCookiebotDialogActive {
+  @apply !border-l-0 !border-r-0 !border-t-0 !border-b-brand-purple-500;
+}
+
+#CybotCookiebotDialog
+  input:checked
+  + .CybotCookiebotDialogBodyLevelButtonSlider {
+  @apply !bg-brand-purple-500;
+}
+
+/**
+* Other styles
+
+* @TODO: most of these probably should move into layer @components
+*/
+
+.rarrow .line {
+  transition: transform 0.2s linear;
+  transform-origin: left center;
+}
+
+.arrow_container:hover .line {
+  transform: scaleX(1.2);
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* timeline animations */
+.slider_slide.slider_slide--faded-in {
+  opacity: 1;
+  visibility: visible;
+  transition: 0.3s linear 0.3s;
+}
+
+.slider_slide.slider_slide--faded-out {
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s linear;
+}
+
+code[class*='language-'],
+pre[class*='language-'] {
+  @apply text-xs md:text-sm;
+}
+
+/* Search page styling */
+.ais-SearchBox-form {
+  border: none;
+  outline: none;
+  background-color: #fafafa;
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  width: 80vw;
+  padding-right: 1rem;
+  max-width: 1000px;
+}
+
+.ais-SearchBox-reset {
+  display: none !important;
+  visibility: collapse !important;
+  height: 0px !important;
+}
+
+.ais-SearchBox-input {
+  border: none;
+  outline: none;
+  background-color: #fafafa;
+  border-color: #fafafa;
+  font-size: 56px;
+  font-weight: 700;
+  width: 85%;
+}
+
+@media (max-width: 630px) {
+  .ais-SearchBox-input {
+    font-size: 20px;
+    padding-top: 10px;
+    padding-left: 0px;
+  }
+}
+
+.ais-SearchBox-input:focus {
+  outline: none;
+  outline-style: none;
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.ais-SearchBox-submitIcon {
+  height: 1.5rem;
+  width: 1.5rem !important;
+}
+
+.ais-SearchBox-resetIcon {
+  height: 0px !important;
+  width: 0px !important;
+  display: none !important;
+}
+
+.ais-Pagination-list {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 1.5rem;
+}
+
+/* blur gradient */
+.blur-gradient {
+  height: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
+  position: absolute;
+  z-index: 0;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+
+  @media (max-width: 768px) {
+    height: fit-content;
+
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 10%,
+      black 90%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 10%,
+      black 90%,
+      transparent 100%
+    );
+  }
+}

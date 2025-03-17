@@ -17,7 +17,7 @@ type AlgoliaSearchProps = ComponentProps<AlgoliaSearchParameters>;
 
 type HitProps = {
   hit: AlgoliaHit<{
-    name: string;
+    title: string;
     price: number;
   }>;
 };
@@ -25,7 +25,7 @@ type HitProps = {
 function Hit({ hit }: HitProps) {
   return (
     <>
-      <Highlight hit={hit} attribute="name" />
+      <Highlight hit={hit} attribute="title" />
       <span className="Hit-price">${hit.price}</span>
     </>
   );

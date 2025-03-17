@@ -1,9 +1,11 @@
 import { ComponentMapping } from '@uniformdev/csk-components/utils/createComponentResolver';
 import AlgoliaSearch from './AlgoliaSearch';
 import Article from './Article';
+import CardContainer from './CardContainer';
 import Container from './Container';
 import CustomComponent from './CustomComponent';
 import NavBar from './NavBar';
+import Person from './Person';
 import VideoPlayer from './VideoPlayer';
 
 // Here, you can add your own component or customize an existing CSK component with your logic or styles.
@@ -16,4 +18,6 @@ export const customComponentsMapping: ComponentMapping = {
   videoPlayer: { component: VideoPlayer },
   article: { component: Article },
   algoliaSearch: { component: AlgoliaSearch },
+  person: { component: Person },
+  cardcontainer: { component: CardContainer },
 };

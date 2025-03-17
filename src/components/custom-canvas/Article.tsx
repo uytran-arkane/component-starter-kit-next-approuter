@@ -1,3 +1,5 @@
+'use client';
+
 import * as React from 'react';
 import { ComponentProps, UniformText } from '@uniformdev/canvas-next-rsc/component';
 import Image from '@/components/elements/Image';
